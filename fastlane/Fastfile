@@ -18,12 +18,12 @@ default_platform(:android)
 platform :android do
   desc "Runs all the tests"
   lane :test do
-    gradle(task: "test")
+    gradle(task: 'test', project_dir: 'android')
   end
 
   desc "Build apk"
   lane :build do |options|
-    gradle(task: 'assemble', build_type: options[:build_type], project_dir: '.')
+    gradle(task: 'assemble', build_type: options[:build_type], project_dir: 'android')
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
