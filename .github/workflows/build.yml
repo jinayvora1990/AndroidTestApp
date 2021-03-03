@@ -6,23 +6,28 @@ on:
     - main
 
 jobs:
-  build:
+  build_verify_distribute:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
     - name: Setup Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: '2.7'
+        bundler-cache: true
 
     - name: Install firebase tools
       run: |
         yarn global add firebase-tools
-        echo "::add-path::$(yarn global bin)"
+        echo "$(yarn global bin)" >> $GITHUB_PATH
+        echo "$(yarn global bin)"
+        echo "$PATH"
 
     - name: Setup fastlane
-      run: bundle install
+      run: |
+        gem install bundler
+        bundle install
 
 # TODO: Auto increment build numbers
 
