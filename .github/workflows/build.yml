@@ -21,10 +21,12 @@ jobs:
       run: |
         yarn global add firebase-tools
         echo "$(yarn global bin)" >> $GITHUB_PATH
-        echo $PATH
+        echo "$(yarn global bin)"
 
     - name: Setup fastlane
-      run: bundle install
+      run: |
+        gem install bundler
+        bundle install
 
 # TODO: Auto increment build numbers
 
