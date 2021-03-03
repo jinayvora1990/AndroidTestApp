@@ -21,10 +21,6 @@ jobs:
       run: |
         yarn global add firebase-tools
         echo "$(yarn global bin)" >> $GITHUB_PATH
-        echo "$(yarn global bin)"
-
-    - name: View updated path 
-      run: echo "$PATH"
 
     - name: Setup fastlane
       run: |
@@ -38,7 +34,6 @@ jobs:
         npm ci
         bundle exec fastlane build
 
-# TODO: Verify if firebase distribution is able to find APK
 # TODO: Setup secrets in Github Actions
 # TODO: Execute Regression Tests
 
