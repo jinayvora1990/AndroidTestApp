@@ -3,7 +3,7 @@ name: Static Analysis and Unit Tests
 on: push
 
 jobs:
-  build:
+  lint_ut:
     runs-on: ubuntu-latest
 
     strategy:
