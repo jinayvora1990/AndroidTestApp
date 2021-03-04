@@ -44,7 +44,7 @@ platform :android do
   desc "Deploy to firebase app distribution"
   lane :firebase_distribution do
     firebase_app_distribution(
-      apk_path: sh("pwd | tr -d '\n'").concat("/android/app/build/outputs/apk/debug/app-debug.apk"), 
+      apk_path: sh("pwd | tr -d '\n'").concat("/../android/app/build/outputs/apk/debug/app-debug.apk"), 
       app: ENV["FIREBASE_APP_ID"],
       firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
       release_notes: "First Alpha Release",
