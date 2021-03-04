@@ -37,8 +37,8 @@ jobs:
 # TODO: Setup secrets in Github Actions
 # TODO: Execute Regression Tests
 
-    - name: Distribute to Firebase
-      run: bundle exec fastlane android firebase_distribution
-      env:
-          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
-          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }} 
+#    - name: Distribute to Firebase
+#      run: bundle exec fastlane android firebase_distribution
+#      env:
+#          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
+#          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }} 
