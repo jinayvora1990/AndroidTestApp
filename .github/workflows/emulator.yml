@@ -1,0 +1,17 @@
+name: Emulator Test
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  emulator_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check HW supports KVM
+      run: |
+        sudo apt install cpu-checker
+        sudo kvm-ok

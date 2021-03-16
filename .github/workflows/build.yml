@@ -3,7 +3,7 @@ name: Build APK, execute Regression Test and Publish
 on:
   pull_request:
     branches:
-    - main
+    - develop
 
 jobs:
   build_verify_distribute:
