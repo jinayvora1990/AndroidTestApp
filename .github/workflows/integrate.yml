@@ -3,7 +3,7 @@ name: Static Analysis and Unit Tests
 on:
   push:
     branches-ignore:
-    - 'main'
+    - main
 
 jobs:
   lint_ut:
