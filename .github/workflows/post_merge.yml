@@ -1,0 +1,17 @@
+name: Build APK, execute Regression Test and Publish
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build_verify_distribute:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(github) }}
+      run: echo "$GITHUB_CONTEXT"
